@@ -1,0 +1,31 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - custom  # 将这里的 'main' 改为 'custom'，以便监听 custom 分支的推送
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # 使用你项目的 Node.js 版本
+
+    - name: Install dependencies
+      run: npm install  # 安装项目依赖
+
+    - name: Build project
+      run: npm run build  # 根据项目的构建命令进行构建
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3  # 使用 peaceiris 的 GitHub Pages 部署 action
+      with:
+        personal_token: ${{ secrets.GITHUB_TOKEN }}  # 使用自动生成的 GitHub token 进行认证
+        publish_dir: ./build  # 构建目录，通常是 ./build 或 ./dist，取决于你的构建工具
