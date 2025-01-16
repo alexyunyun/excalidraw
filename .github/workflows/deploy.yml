@@ -16,16 +16,16 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18.x'  # 设置为符合要求的 Node.js 版本（例如 18.x）
+        node-version: '18.x'  # 设置 Node.js 版本为 18.x
 
     - name: Install dependencies
-      run: yarn install  # 使用 yarn 安装依赖
+      run: yarn --cwd ./excalidraw-app install  # 在 excalidraw-app 目录中安装依赖
 
     - name: Build project
-      run: yarn run build  # 使用 yarn 构建项目
+      run: yarn --cwd ./excalidraw-app build  # 在 excalidraw-app 目录中构建项目
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        personal_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build  # 构建目录
+        personal_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 自动生成的 token 进行认证
+        publish_dir: ./excalidraw-app/build  # 发布目录指向 excalidraw-app/build
