@@ -8,6 +8,8 @@ import {
   FontFamilyCodeIcon,
   FontFamilyNormalIcon,
   FreedrawIcon,
+  ShaohuaIcon,
+  YutongIcon,
 } from "../icons";
 import { ButtonSeparator } from "../ButtonSeparator";
 import type { FontFamilyValues } from "../../element/types";
@@ -34,6 +36,18 @@ export const DEFAULT_FONTS = [
     icon: FontFamilyCodeIcon,
     text: t("labels.code"),
     testId: "font-family-code",
+  },
+  {
+    value: FONT_FAMILY.Shaohua,
+    icon: ShaohuaIcon,
+    text: "韶华",
+    testId: "font-family-shaohua",
+  },
+  {
+    value: FONT_FAMILY.Yutong,
+    icon: YutongIcon,
+    text: "雨桐",
+    testId: "font-family-yutong",
   },
 ];
 

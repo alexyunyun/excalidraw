@@ -2219,3 +2219,17 @@ export const elementLinkIcon = createIcon(
   </g>,
   tablerIconProps,
 );
+
+export const ShaohuaIcon = createIcon(
+  <g strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4 Q 8 4, 12 8 T 20 12 M4 12 Q 8 8, 12 12 T 20 16 M4 16 Q 8 16, 12 20 T 20 20" stroke="currentColor" fill="none"/>
+  </g>,
+  modifiedTablerIconProps,
+);
+
+export const YutongIcon = createIcon(
+  <g strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4 L 20 4 M4 12 Q 12 4, 20 12 Q 12 20, 4 12 M8 16 L 16 16 M10 20 L 14 20" stroke="currentColor" fill="none"/>
+  </g>,
+  modifiedTablerIconProps,
+);

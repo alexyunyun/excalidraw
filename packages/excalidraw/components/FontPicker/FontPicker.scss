@@ -2,14 +2,29 @@
 
 .excalidraw {
   .FontPicker__container {
-    display: grid;
-    grid-template-columns: calc(1rem + 3 * var(--default-button-size)) 1rem 1fr; // calc ~ 2 gaps + 4 buttons
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    padding: 0.25rem;
+
+    .buttonList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: var(--lg-button-size);
+
+      label, button {
+        flex: 1 0 auto;
+        min-width: calc(var(--lg-button-size) + 0.5rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
 
     @include isMobile {
-      max-width: calc(
-        2rem + 4 * var(--default-button-size)
-      ); // 4 gaps + 4 buttons
+      max-width: calc(2rem + 4 * var(--default-button-size));
     }
   }
 }

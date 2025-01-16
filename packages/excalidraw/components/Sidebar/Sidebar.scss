@@ -11,8 +11,10 @@
     right: 0;
     z-index: 5;
     margin: 0;
-    padding: 0;
+    padding: 0.75rem;
     box-sizing: border-box;
+    min-width: 320px;
+    width: 320px;
 
     background-color: var(--sidebar-bg-color);
     box-shadow: var(--sidebar-shadow);
@@ -30,7 +32,6 @@
 
     overflow: hidden;
     border-radius: 0;
-    width: calc(#{$right-sidebar-width} - var(--space-factor) * 2);
 
     border-left: 1px solid var(--sidebar-border-color);
 
@@ -48,12 +49,13 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1rem 0.75rem;
+    padding: 0.5rem 0;
     position: relative;
+    margin-bottom: 0.75rem;
 
     &::after {
       content: "";
-      width: calc(100% - 1.5rem);
+      width: 100%;
       height: 1px;
       background: var(--sidebar-border-color);
       position: absolute;
@@ -99,17 +101,16 @@
   .sidebar-tabs-root {
     display: flex;
     flex-direction: column;
-    flex: 1 1 auto;
-    padding: 1rem 0;
+    flex: 1;
+    min-height: 0;
 
     [role="tabpanel"] {
-      flex: 1;
-      outline: none;
-
-      flex: 1 1 auto;
       display: flex;
       flex-direction: column;
+      flex: 1;
+      min-height: 0;
       outline: none;
+      padding: 0.75rem 0;
     }
 
     [role="tabpanel"][data-state="inactive"] {
@@ -118,14 +119,15 @@
 
     [role="tablist"] {
       display: grid;
-      gap: 1rem;
+      gap: 0.5rem;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      margin-bottom: 0.75rem;
     }
   }
 
   .sidebar-tabs-root > .sidebar__header {
     padding-top: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   .sidebar-tab-trigger {
@@ -150,17 +152,15 @@
   .default-sidebar {
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     .sidebar-triggers {
       $padding: 2px;
       $border: 1px;
       display: flex;
-      gap: 0;
+      gap: 0.5rem;
       padding: $padding;
-      // offset by padding + border to vertically center the list with sibling
-      // buttons (both from top and bototm, due to flex layout)
-      margin-top: -#{$padding + $border};
-      margin-bottom: -#{$padding + $border};
+      margin: 0.5rem 0;
       border: $border solid var(--sidebar-border-color);
       background: var(--default-bg-color);
       border-radius: 0.625rem;
@@ -168,9 +168,15 @@
       .sidebar-tab-trigger {
         height: var(--lg-button-size);
         width: var(--lg-button-size);
-
         border: none;
       }
+    }
+
+    .buttonList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
     }
   }
 }

@@ -3,6 +3,8 @@ import {
   FontFamilyNormalIcon,
   FontFamilyHeadingIcon,
   FontFamilyCodeIcon,
+  ShaohuaIcon,
+  YutongIcon,
 } from "../components/icons";
 import { FONT_FAMILY, FONT_FAMILY_FALLBACKS } from "../constants";
 
@@ -109,6 +111,24 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       lineHeight: 1.15,
     },
     serverSide: true,
+  },
+  [FONT_FAMILY.Shaohua]: {
+    metrics: {
+      unitsPerEm: 1000,
+      ascender: 880,
+      descender: -120,
+      lineHeight: 1.25,
+    },
+    icon: ShaohuaIcon,
+  },
+  [FONT_FAMILY.Yutong]: {
+    metrics: {
+      unitsPerEm: 1000,
+      ascender: 880,
+      descender: -120,
+      lineHeight: 1.25,
+    },
+    icon: YutongIcon,
   },
   [FONT_FAMILY_FALLBACKS.Xiaolai]: {
     metrics: {
