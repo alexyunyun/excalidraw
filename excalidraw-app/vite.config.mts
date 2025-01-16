@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
   const envVars = loadEnv(mode, `../`);
   // https://vitejs.dev/config/
   return {
+    base: '/excalidraw/',
     server: {
       port: Number(envVars.VITE_APP_PORT || 3000),
       // open the browser
@@ -148,41 +149,41 @@ export default defineConfig(({ mode }) => {
             "Excalidraw is a whiteboard tool that lets you easily sketch diagrams that have a hand-drawn feel to them.",
           icons: [
             {
-              src: "android-chrome-192x192.png",
+              src: "/excalidraw/android-chrome-192x192.png",
               sizes: "192x192",
               type: "image/png",
             },
             {
-              src: "apple-touch-icon.png",
+              src: "/excalidraw/apple-touch-icon.png",
               type: "image/png",
               sizes: "180x180",
             },
             {
-              src: "favicon-32x32.png",
+              src: "/excalidraw/favicon-32x32.png",
               sizes: "32x32",
               type: "image/png",
             },
             {
-              src: "favicon-16x16.png",
+              src: "/excalidraw/favicon-16x16.png",
               sizes: "16x16",
               type: "image/png",
             },
           ],
-          start_url: "/",
+          start_url: "/excalidraw/",
           id:"excalidraw",
           display: "standalone",
           theme_color: "#121212",
           background_color: "#ffffff",
           file_handlers: [
             {
-              action: "/",
+              action: "/excalidraw/",
               accept: {
                 "application/vnd.excalidraw+json": [".excalidraw"],
               },
             },
           ],
           share_target: {
-            action: "/web-share-target",
+            action: "/excalidraw/web-share-target",
             method: "POST",
             enctype: "multipart/form-data",
             params: {
@@ -200,32 +201,32 @@ export default defineConfig(({ mode }) => {
           },
           screenshots: [
             {
-              src: "/screenshots/virtual-whiteboard.png",
+              src: "/excalidraw/screenshots/virtual-whiteboard.png",
               type: "image/png",
               sizes: "462x945",
             },
             {
-              src: "/screenshots/wireframe.png",
+              src: "/excalidraw/screenshots/wireframe.png",
               type: "image/png",
               sizes: "462x945",
             },
             {
-              src: "/screenshots/illustration.png",
+              src: "/excalidraw/screenshots/illustration.png",
               type: "image/png",
               sizes: "462x945",
             },
             {
-              src: "/screenshots/shapes.png",
+              src: "/excalidraw/screenshots/shapes.png",
               type: "image/png",
               sizes: "462x945",
             },
             {
-              src: "/screenshots/collaboration.png",
+              src: "/excalidraw/screenshots/collaboration.png",
               type: "image/png",
               sizes: "462x945",
             },
             {
-              src: "/screenshots/export.png",
+              src: "/excalidraw/screenshots/export.png",
               type: "image/png",
               sizes: "462x945",
             },
